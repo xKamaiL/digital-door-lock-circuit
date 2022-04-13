@@ -3,4 +3,4 @@ mini project door lock circuit using basic (or, and) gate and flip-flop (memory)
 with sequence circuit 
 
 
-powered by VHDL Quartus Software
+simulation by VHDL Quartus Software
