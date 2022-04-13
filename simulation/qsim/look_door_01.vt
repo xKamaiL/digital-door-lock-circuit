@@ -1,0 +1,416 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/14/2022 02:29:06"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    look_door_01
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module look_door_01_vlg_sample_tst(
+	CLK,
+	reset,
+	sw0,
+	sw1,
+	sw2,
+	sw3,
+	sw4,
+	sw5,
+	sw6,
+	sw7,
+	sw8,
+	sw9,
+	sampler_tx
+);
+input  CLK;
+input  reset;
+input  sw0;
+input  sw1;
+input  sw2;
+input  sw3;
+input  sw4;
+input  sw5;
+input  sw6;
+input  sw7;
+input  sw8;
+input  sw9;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(CLK or reset or sw0 or sw1 or sw2 or sw3 or sw4 or sw5 or sw6 or sw7 or sw8 or sw9)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module look_door_01_vlg_check_tst (
+	A1,
+	A2,
+	A3,
+	A4,
+	sampler_rx
+);
+input  A1;
+input  A2;
+input  A3;
+input  A4;
+input sampler_rx;
+
+reg  A1_expected;
+reg  A2_expected;
+reg  A3_expected;
+reg  A4_expected;
+
+reg  A1_prev;
+reg  A2_prev;
+reg  A3_prev;
+reg  A4_prev;
+
+reg  A1_expected_prev;
+reg  A2_expected_prev;
+reg  A3_expected_prev;
+reg  A4_expected_prev;
+
+reg  last_A1_exp;
+reg  last_A2_exp;
+reg  last_A3_exp;
+reg  last_A4_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:4] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 4'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	A1_prev = A1;
+	A2_prev = A2;
+	A3_prev = A3;
+	A4_prev = A4;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	A1_expected_prev = A1_expected;
+	A2_expected_prev = A2_expected;
+	A3_expected_prev = A3_expected;
+	A4_expected_prev = A4_expected;
+end
+
+
+
+// expected A1
+initial
+begin
+	A1_expected = 1'bX;
+end 
+
+// expected A2
+initial
+begin
+	A2_expected = 1'bX;
+end 
+
+// expected A3
+initial
+begin
+	A3_expected = 1'bX;
+end 
+
+// expected A4
+initial
+begin
+	A4_expected = 1'bX;
+end 
+// generate trigger
+always @(A1_expected or A1 or A2_expected or A2 or A3_expected or A3 or A4_expected or A4)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected A1 = %b | expected A2 = %b | expected A3 = %b | expected A4 = %b | ",A1_expected_prev,A2_expected_prev,A3_expected_prev,A4_expected_prev);
+	$display("| real A1 = %b | real A2 = %b | real A3 = %b | real A4 = %b | ",A1_prev,A2_prev,A3_prev,A4_prev);
+`endif
+	if (
+		( A1_expected_prev !== 1'bx ) && ( A1_prev !== A1_expected_prev )
+		&& ((A1_expected_prev !== last_A1_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port A1 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", A1_expected_prev);
+		$display ("     Real value = %b", A1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_A1_exp = A1_expected_prev;
+	end
+	if (
+		( A2_expected_prev !== 1'bx ) && ( A2_prev !== A2_expected_prev )
+		&& ((A2_expected_prev !== last_A2_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port A2 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", A2_expected_prev);
+		$display ("     Real value = %b", A2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_A2_exp = A2_expected_prev;
+	end
+	if (
+		( A3_expected_prev !== 1'bx ) && ( A3_prev !== A3_expected_prev )
+		&& ((A3_expected_prev !== last_A3_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port A3 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", A3_expected_prev);
+		$display ("     Real value = %b", A3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_A3_exp = A3_expected_prev;
+	end
+	if (
+		( A4_expected_prev !== 1'bx ) && ( A4_prev !== A4_expected_prev )
+		&& ((A4_expected_prev !== last_A4_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port A4 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", A4_expected_prev);
+		$display ("     Real value = %b", A4_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_A4_exp = A4_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module look_door_01_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLK;
+reg reset;
+reg sw0;
+reg sw1;
+reg sw2;
+reg sw3;
+reg sw4;
+reg sw5;
+reg sw6;
+reg sw7;
+reg sw8;
+reg sw9;
+// wires                                               
+wire A1;
+wire A2;
+wire A3;
+wire A4;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+look_door_01 i1 (
+// port map - connection between master ports and signals/registers   
+	.A1(A1),
+	.A2(A2),
+	.A3(A3),
+	.A4(A4),
+	.CLK(CLK),
+	.reset(reset),
+	.sw0(sw0),
+	.sw1(sw1),
+	.sw2(sw2),
+	.sw3(sw3),
+	.sw4(sw4),
+	.sw5(sw5),
+	.sw6(sw6),
+	.sw7(sw7),
+	.sw8(sw8),
+	.sw9(sw9)
+);
+
+// CLK
+initial
+begin
+	CLK = 1'b0;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+	reset = #980000 1'b1;
+end 
+
+// sw0
+initial
+begin
+	sw0 = 1'b0;
+	sw0 = #20000 1'b1;
+	sw0 = #60000 1'b0;
+end 
+
+// sw1
+initial
+begin
+	sw1 = 1'b0;
+	sw1 = #100000 1'b1;
+	sw1 = #60000 1'b0;
+end 
+
+// sw2
+initial
+begin
+	sw2 = 1'b0;
+	sw2 = #180000 1'b1;
+	sw2 = #60000 1'b0;
+end 
+
+// sw3
+initial
+begin
+	sw3 = 1'b0;
+	sw3 = #260000 1'b1;
+	sw3 = #80000 1'b0;
+end 
+
+// sw4
+initial
+begin
+	sw4 = 1'b0;
+	sw4 = #360000 1'b1;
+	sw4 = #100000 1'b0;
+end 
+
+// sw5
+initial
+begin
+	sw5 = 1'b0;
+	sw5 = #480000 1'b1;
+	sw5 = #100000 1'b0;
+end 
+
+// sw6
+initial
+begin
+	sw6 = 1'b0;
+	sw6 = #600000 1'b1;
+	sw6 = #80000 1'b0;
+end 
+
+// sw7
+initial
+begin
+	sw7 = 1'b0;
+	sw7 = #700000 1'b1;
+	sw7 = #80000 1'b0;
+end 
+
+// sw8
+initial
+begin
+	sw8 = 1'b0;
+	sw8 = #800000 1'b1;
+	sw8 = #80000 1'b0;
+end 
+
+// sw9
+initial
+begin
+	sw9 = 1'b0;
+	sw9 = #900000 1'b1;
+	sw9 = #80000 1'b0;
+end 
+
+look_door_01_vlg_sample_tst tb_sample (
+	.CLK(CLK),
+	.reset(reset),
+	.sw0(sw0),
+	.sw1(sw1),
+	.sw2(sw2),
+	.sw3(sw3),
+	.sw4(sw4),
+	.sw5(sw5),
+	.sw6(sw6),
+	.sw7(sw7),
+	.sw8(sw8),
+	.sw9(sw9),
+	.sampler_tx(sampler)
+);
+
+look_door_01_vlg_check_tst tb_out(
+	.A1(A1),
+	.A2(A2),
+	.A3(A3),
+	.A4(A4),
+	.sampler_rx(sampler)
+);
+endmodule
+

@@ -1,0 +1,25 @@
+|look_door_01
+A1 <= or_A1.DB_MAX_OUTPUT_PORT_TYPE
+sw0 => or_A1.IN0
+sw2 => or_A1.IN1
+sw2 => or_A2.IN2
+sw4 => or_A3.IN3
+sw4 => or_A1.IN2
+sw8 => or_A4.IN0
+sw8 => or_A1.IN3
+reset => reset_or6.IN0
+reset => reset_or.IN0
+sw6 => reset_or6.IN1
+A2 <= or_A2.DB_MAX_OUTPUT_PORT_TYPE
+sw1 => or_A2.IN0
+sw5 => or_A3.IN1
+sw5 => or_A2.IN1
+sw9 => or_A4.IN1
+sw9 => or_A2.IN3
+A3 <= or_A3.DB_MAX_OUTPUT_PORT_TYPE
+sw3 => or_A3.IN0
+A4 <= reset_or.DB_MAX_OUTPUT_PORT_TYPE
+sw7 => or_A4.IN2
+CLK => ~NO_FANOUT~
+
+
