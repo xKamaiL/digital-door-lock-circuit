@@ -1,4 +1,4 @@
-Fitter Status : Successful - Thu Apr 14 02:24:07 2022
+Fitter Status : Successful - Thu Apr 14 13:59:48 2022
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : look_door_01
 Top-level Entity Name : look_door_01
@@ -9,7 +9,7 @@ Total logic elements : 6 / 5,136 ( < 1 % )
     Total combinational functions : 6 / 5,136 ( < 1 % )
     Dedicated logic registers : 0 / 5,136 ( 0 % )
 Total registers : 0
-Total pins : 16 / 183 ( 9 % )
+Total pins : 19 / 183 ( 10 % )
 Total virtual pins : 0
 Total memory bits : 0 / 423,936 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )

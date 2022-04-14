@@ -1,5 +1,5 @@
 EDA Netlist Writer report for look_door_01
-Thu Apr 14 02:29:07 2022
+Thu Apr 14 13:59:53 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Apr 14 02:29:07 2022 ;
+; EDA Netlist Writer Status ; Successful - Thu Apr 14 13:59:53 2022 ;
 ; Revision Name             ; look_door_01                          ;
 ; Top-level Entity Name     ; look_door_01                          ;
 ; Family                    ; Cyclone III                           ;
@@ -80,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Apr 14 02:29:07 2022
-Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog look_door_01 -c look_door_01
+    Info: Processing started: Thu Apr 14 13:59:52 2022
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off look_door_01 -c look_door_01
 Info (204019): Generated file look_door_01.vo in folder "C:/Users/xKamaiL/Desktop/digital/look_door_01/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4501 megabytes
-    Info: Processing ended: Thu Apr 14 02:29:07 2022
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4504 megabytes
+    Info: Processing ended: Thu Apr 14 13:59:53 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 
