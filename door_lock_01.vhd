@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.all;
 
 LIBRARY work;
 
-ENTITY door_lock_02 IS 
+ENTITY door_lock_01 IS 	
 	PORT
 	(
 		CLK :  IN  STD_LOGIC;
@@ -24,9 +24,9 @@ ENTITY door_lock_02 IS
 		unlock : out STD_LOGIC
 
 	);
-END door_lock_02;
+END door_lock_01;
 
-ARCHITECTURE behavior OF door_lock_02 IS
+ARCHITECTURE behavior OF door_lock_01 IS
 signal A : STD_LOGIC;
 signal B : STD_LOGIC;
 signal C : STD_LOGIC;
